@@ -12,3 +12,288 @@
 
 Бизнес модель этот проект не имеет так как он будет совершенно бесплатный и никаких вложений не требует.
 
+import telebot
+from telebot import types
+
+token = '7772533806:AAHpv5tKp2UwgVj0G7QJ-Py8szCuH066bDo'
+bot = telebot.TeleBot(token)
+
+
+@bot.message_handler(commands=['start'])
+def start_message(message):
+    bot.send_message(message.chat.id, 'Привет')
+    bot.send_message(message.chat.id, 'Напишите в чат /klass для выбора класса')
+
+
+@bot.message_handler(commands=['klass'])
+def button_message(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    item1 = types.KeyboardButton("1")
+    markup.add(item1)
+    item2 = types.KeyboardButton("2")
+    markup.add(item2)
+    item3 = types.KeyboardButton("3")
+    markup.add(item3)
+    item4 = types.KeyboardButton("4")
+    markup.add(item4)
+    item5 = types.KeyboardButton("5")
+    markup.add(item5)
+    item6 = types.KeyboardButton("6")
+    markup.add(item6)
+    item7 = types.KeyboardButton("7")
+    markup.add(item7)
+    item8 = types.KeyboardButton("8")
+    markup.add(item8)
+    item9 = types.KeyboardButton("9")
+    markup.add(item9)
+    item10 = types.KeyboardButton("10")
+    markup.add(item10)
+    item11 = types.KeyboardButton("11")
+    markup.add(item11)
+
+    bot.send_message(message.chat.id, 'Выберите ваш класс', reply_markup=markup)
+
+
+@bot.message_handler(content_types='text')
+def message_reply(message):
+    if message.text == "1":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = types.KeyboardButton("математика")
+        if message.text == "математика":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item2 = types.KeyboardButton("русский язык")
+        if message.text == "русский язык":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item3 = types.KeyboardButton("окружающий мир")
+        if message.text == "окружающий мир":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        markup.add(item1)
+        markup.add(item2)
+        markup.add(item3)
+        bot.send_message(message.chat.id, 'Выберите предмет', reply_markup=markup)
+
+    elif message.text == "2":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item4 = types.KeyboardButton("математика")
+        if message.text == "математика":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item5 = types.KeyboardButton("русский язык")
+        if message.text == "русский язык":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item6 = types.KeyboardButton("окружающий мир")
+        if message.text == "окружающий мир":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item7 = types.KeyboardButton("литература")
+        if message.text == "литература":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        markup.add(item4)
+        markup.add(item5)
+        markup.add(item6)
+        markup.add(item7)
+
+        bot.send_message(message.chat.id, 'Выберите предмет', reply_markup=markup)
+    elif message.text == "3":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = types.KeyboardButton("математика")
+        if message.text == "математика":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item2 = types.KeyboardButton("русский язык")
+        if message.text == "русский язык":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item3 = types.KeyboardButton("окружающий мир")
+        if message.text == "окружающий мир":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item4 = types.KeyboardButton("литература")
+        if message.text == "литература":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        markup.add(item1)
+        markup.add(item2)
+        markup.add(item3)
+        markup.add(item4)
+
+        bot.send_message(message.chat.id, 'Выберите предмет', reply_markup=markup)
+    elif message.text == "4":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = types.KeyboardButton("математика")
+        if message.text == "математика":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item2 = types.KeyboardButton("русский язык")
+        if message.text == "русский язык":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item3 = types.KeyboardButton("окружающий мир")
+        if message.text == "окружающий мир":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item4 = types.KeyboardButton("литература")
+        if message.text == "литература":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        markup.add(item1)
+        markup.add(item2)
+        markup.add(item3)
+        markup.add(item4)
+
+        bot.send_message(message.chat.id, 'Выберите предмет', reply_markup=markup)
+    elif message.text == "5":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = types.KeyboardButton("математика")
+        if message.text == "математика":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item2 = types.KeyboardButton("литература")
+        if message.text == "литература":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item3 = types.KeyboardButton("биология")
+        if message.text == "биология":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item4 = types.KeyboardButton("русский язык")
+        if message.text == "русский язык":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item5 = types.KeyboardButton("иностранный язык")
+        if message.text == "иностранный язык":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        markup.add(item1)
+        markup.add(item2)
+        markup.add(item3)
+        markup.add(item4)
+        markup.add(item5)
+
+        bot.send_message(message.chat.id, 'Выберите предмет', reply_markup=markup)
+    elif message.text == "6":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = types.KeyboardButton("математика")
+        if message.text == "математика":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item2 = types.KeyboardButton("литература")
+        if message.text == "литература":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item3 = types.KeyboardButton("биология")
+        if message.text == "биология":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item4 = types.KeyboardButton("русский язык")
+        if message.text == "русский язык":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item5 = types.KeyboardButton("иностранный язык")
+        if message.text == "иностранный язык":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        markup.add(item1)
+        markup.add(item2)
+        markup.add(item3)
+        markup.add(item4)
+        markup.add(item5)
+
+        bot.send_message(message.chat.id, 'Выберите предмет', reply_markup=markup)
+    elif message.text == "7":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = types.KeyboardButton("алгебра")
+        if message.text == "алгебра":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item2 = types.KeyboardButton("геометрия")
+        if message.text == "геометрия":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item3 = types.KeyboardButton("вероятность и статистика")
+        if message.text == "вероятность и статистика":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item4 = types.KeyboardButton("литература")
+        if message.text == "литература":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item5 = types.KeyboardButton("биология")
+        if message.text == "биология":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item6 = types.KeyboardButton("русский язык")
+        if message.text == "русский язык":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        item7 = types.KeyboardButton("иностранный язык")
+        if message.text == "иностранный язык":
+            bot.send_message(message.chat.id, 'Выберите тему', reply_markup=markup)
+        markup.add(item1)
+        markup.add(item2)
+        markup.add(item3)
+        markup.add(item4)
+        markup.add(item5)
+        markup.add(item6)
+        markup.add(item7)
+
+        bot.send_message(message.chat.id, 'Выберите предмет', reply_markup=markup)
+    elif message.text == "8":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = types.KeyboardButton("алгебра")
+        item2 = types.KeyboardButton("геометрия")
+        item3 = types.KeyboardButton("вероятность и статистика")
+        item4 = types.KeyboardButton("литература")
+        item5 = types.KeyboardButton("биология")
+        item6 = types.KeyboardButton("русский язык")
+        item7 = types.KeyboardButton("химия")
+        item8 = types.KeyboardButton("иностранный язык")
+        markup.add(item1)
+        markup.add(item2)
+        markup.add(item3)
+        markup.add(item4)
+        markup.add(item5)
+        markup.add(item6)
+        markup.add(item7)
+        markup.add(item8)
+
+        bot.send_message(message.chat.id, 'Выберите предмет', reply_markup=markup)
+    elif message.text == "9":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+
+        item1 = types.KeyboardButton("алгебра")
+        item2 = types.KeyboardButton("геометрия")
+        item3 = types.KeyboardButton("вероятность и статистика")
+        item9 = types.KeyboardButton("литература")
+        item5 = types.KeyboardButton("биология")
+        item6 = types.KeyboardButton("русский язык")
+        item7 = types.KeyboardButton("химия")
+        item8 = types.KeyboardButton("иностранный язык")
+        markup.add(item8)
+        markup.add(item1)
+        markup.add(item2)
+        markup.add(item3)
+        markup.add(item9)
+        markup.add(item5)
+        markup.add(item6)
+        markup.add(item7)
+
+        bot.send_message(message.chat.id, 'Выберите предмет', reply_markup=markup)
+    elif message.text == "10":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        item1 = types.KeyboardButton("алгебра")
+        item2 = types.KeyboardButton("геометрия")
+        item3 = types.KeyboardButton("вероятность и статистика")
+        item9 = types.KeyboardButton("литература")
+        item5 = types.KeyboardButton("биология")
+        item6 = types.KeyboardButton("русский язык")
+        item7 = types.KeyboardButton("химия")
+        item8 = types.KeyboardButton("иностранный язык")
+        markup.add(item8)
+        markup.add(item1)
+        markup.add(item2)
+        markup.add(item3)
+        markup.add(item9)
+        markup.add(item5)
+        markup.add(item6)
+        markup.add(item7)
+
+        bot.send_message(message.chat.id, 'Выберите предмет', reply_markup=markup)
+    elif message.text == "11":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+
+        item1 = types.KeyboardButton("алгебра")
+        item2 = types.KeyboardButton("геометрия")
+        item3 = types.KeyboardButton("вероятность и статистика")
+        item5 = types.KeyboardButton("биология")
+        item6 = types.KeyboardButton("русский язык")
+        item7 = types.KeyboardButton("химия")
+        item9 = types.KeyboardButton("иностранный язык")
+        item8 = types.KeyboardButton("литература")
+        markup.add(item8)
+        markup.add(item1)
+        markup.add(item2)
+        markup.add(item3)
+        markup.add(item5)
+        markup.add(item6)
+        markup.add(item7)
+        markup.add(item9)
+
+        bot.send_message(message.chat.id, 'Выберите предмет', reply_markup=markup)
+
+
+bot.infinity_polling()
